@@ -1,0 +1,68 @@
+{% load static %}
+
+<div class="rounded-2xl p-6 border border-gray-300 shadow-sm w-full" style="background-color: #f8f8f6;">
+  <h3 class="text-base font-bold text-gray-900 mb-2" style="font-family: General Sans, sans-serif;">Task</h3>
+  <div class="h-px bg-gray-300 w-full mb-6"></div>
+
+  <div class="space-y-4">
+    <!-- Dynamic Quizzes/Tasks from database -->
+    {% for quiz in quizzes %}
+    <div class="rounded-xl p-5 border border-gray-200 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4" style="background-color: #ffffff;">
+      <div class="flex-1">
+        <div class="flex items-center space-x-3 mb-2">
+          <span class="font-bold text-base text-gray-900">{{ quiz.name }}</span>
+          <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-semibold text-xs rounded-md" style="background-color: #D1FAE5; color: #065F46;">500 points</span>
+        </div>
+        <p class="text-xs text-gray-600 leading-relaxed mb-1">
+          Tell us about the college festival in your region or complete this assigned task.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-end justify-between self-stretch md:self-auto">
+        <a href="{% url 'quiz' quiz.id %}" style="background-color: #1F77D0;" class="text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+          Start
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- Submit POC Task Card -->
+    <div class="rounded-xl p-5 border border-gray-200 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4" style="background-color: #ffffff;">
+      <div class="flex-1">
+        <div class="flex items-center space-x-3 mb-2">
+          <span class="font-bold text-base text-gray-900">Submit POC</span>
+          <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-semibold text-xs rounded-md" style="background-color: #D1FAE5; color: #065F46;">250 points</span>
+        </div>
+        <p class="text-xs text-gray-600 leading-relaxed mb-1">
+          Submit contacts of individual or group of participants. You will be rewarded with 250 points for this task.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-end justify-between self-stretch md:self-auto">
+        <a href="{% url 'poc-create' %}" style="background-color: #1F77D0;" class="text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+          Submit
+        </a>
+      </div>
+    </div>
+
+    <!-- Submit Idea Task Card -->
+    <div class="rounded-xl p-5 border border-gray-200 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4" style="background-color: #ffffff;">
+      <div class="flex-1">
+        <div class="flex items-center space-x-3 mb-2">
+          <span class="font-bold text-base text-gray-900">Submit Idea</span>
+          <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-semibold text-xs rounded-md" style="background-color: #D1FAE5; color: #065F46;">200 points</span>
+        </div>
+        <p class="text-xs text-gray-600 leading-relaxed mb-1">
+          Is your mind engulfed with ideas that will make Alcheringa more enjoyable than before? Suggest ideas to get credited with points.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-end justify-between self-stretch md:self-auto">
+        <a href="{% url 'idea-create' %}" style="background-color: #1F77D0;" class="text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+          Submit
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

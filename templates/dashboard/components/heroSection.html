@@ -1,0 +1,50 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/heroSection.css' %}" />
+
+<div class="heroSectionn">
+
+  <div class="contHolderBox" style="background-image: url('{% static 'images/hero/landing.png' %}');">
+    <p class="caTxt">Campus Ambassador</p>
+    <p class="caPara">
+      With the vision to bring out the essential Leadership traits in you,<br>
+      <span class="caParaIN">Alcheringa IIT Guwahati</span> presents the Campus Ambassador Program.
+    </p>
+
+    <a href="{% url 'register_single' %}" class="joinBtn navhero-btn">Register</a>
+
+    <div class="counterBox">
+      <div class="valBox">
+        <p class="num" data-target="500" data-suffix="+">0+</p>
+        <p class="title1">Colleges</p>
+      </div>
+      <div class="valBox">
+        <p class="num" data-target="100" data-suffix="+">0+</p>
+        <p class="title1">Events</p>
+      </div>
+      <div class="valBox">
+        <p class="num" data-target="200" data-suffix="k+">0k+</p>
+        <p class="title1">Footfall</p>
+      </div>
+      <div class="valBox">
+        <p class="num" data-target="45" data-suffix="+">0+</p>
+        <p class="title1">Competitions</p>
+      </div>
+    </div>
+  </div>
+  <!-- ^ contHolderBox now properly closed here -->
+
+  <div class="aftermovie-preview">
+    <img class="landing2" src="{% static 'images/hero/LandingPage.png' %}" alt="Alcheringa event">
+  </div>
+  <!-- landing2 and the stat cards are grouped together so hover on the image triggers the arc -->
+
+</div>
+
+<script src="{% static 'js/heroPage.js' %}"></script>
+
+<!--
+.heroSectionn .valBox:nth-child(1) { transform: rotate(8.21deg); }
+.heroSectionn .valBox:nth-child(2) { transform: rotate(-6.83deg); }
+.heroSectionn .valBox:nth-child(3) { transform: rotate(6.83deg); }
+.heroSectionn .valBox:nth-child(4) { transform: rotate(-8.21deg); }
+-->
